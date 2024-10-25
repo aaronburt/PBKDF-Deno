@@ -4,6 +4,9 @@ export default class CryptKey {
     private iterations: number = 10000; 
     private hashAlgorithm = "SHA-256";
     private readonly textEncoder: TextEncoder = new TextEncoder();
+
+    private algorithmIdentifierName = "PBKDF2";
+
   
     async build(password: string){
       const passwordKey = await this.derivePassword(password);
